@@ -1,6 +1,10 @@
 var config = require("../config.json");
 
-module.exports = function(key) {
+module.exports = {
+	get: get
+};
+
+function get(key) {
 	var val = config[key];
 	if (val !== undefined) {
 		return val;

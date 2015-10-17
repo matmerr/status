@@ -1,0 +1,9 @@
+{
+  "sites": [{
+    "name": "Google",
+    "url": "http://google.com/"
+  }, {
+    "name": "YouTube",
+    "url": "http://youtube.com/"
+  }]
+}
