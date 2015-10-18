@@ -6,6 +6,7 @@ var version = require("../package.json").version;
 var Monitor = require("./monitor");
 
 module.exports = start;
+module.exports.sockets = sockets;
 
 var sockets;
 var monitor;
@@ -19,12 +20,12 @@ function start() {
 		config.get("host")
 	);
 
-	monitor = new Monitor();
-
 	sockets = io(server);
 	sockets.on("connect", function(s) {
 		init(s);
 	});
+
+	monitor = new Monitor(sockets);
 	
 	console.log("");
 	console.log("status@" + version);
