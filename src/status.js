@@ -40,5 +40,5 @@ function start() {
 }
 
 function init(socket) {
-	console.log("Client connected");
+	socket.emit("init", monitor);
 }

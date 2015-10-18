@@ -1,3 +1,4 @@
+var _ = require("lodash");
 var request = require("request");
 var sites = require("../sites.json").sites;
 var Ping = require("./ping");
@@ -33,6 +34,18 @@ Monitor.prototype.addSite = function(args) {
 	this.sites.push(site);
 
 	ping(site);
+};
+
+Monitor.prototype.toJSON = function() {
+	var json = {
+		sites: []
+	};
+	
+	this.sites.forEach(function(site) {
+		json.sites.push(_.omit(site, "sockets"));
+	});
+	
+	return json;
 };
 
 function ping(site, last) {
