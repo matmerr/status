@@ -4,7 +4,7 @@ module.exports = Ping;
 
 function Ping(args) {
 	_.merge(this, _.extend({
-		ms: "",
+		ping: "",
 		timestamp: ""
 	}, args));
 }

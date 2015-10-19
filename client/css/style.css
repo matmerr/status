@@ -1,0 +1,28 @@
+body {
+	background: #fff;
+	font: 14px "Open Sans", sans-serif;
+	margin: 0;
+	margin-top: 60px;
+	padding: 20px;
+}
+#sites {
+	max-width: 460px;
+	margin: 0 auto;
+}
+#sites .site {
+	border: 1px solid #ccc;
+	padding: 14px 18px;
+}
+#sites .site + .site {
+	margin-top: 20px;
+}
+#sites .name {
+	font-weight: 600;
+	font-size: 18px;
+}
+#sites .ping {
+	float: right;
+	color: #ccc;
+	font-size: 32px;
+	font-weight: 600;
+}

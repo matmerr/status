@@ -64,9 +64,9 @@ function ping(site, last) {
 		var url = site.url;
 
 		request(url, function(err, res) {
-			var ms = time(start);
+			var ping = time(start);
 			site.addPing({
-				ms: ms,
+				ping: ping,
 				timestamp: time()
 			});
 		});

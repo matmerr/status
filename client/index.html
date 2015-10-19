@@ -2,14 +2,21 @@
 <html>
 	<head>
 	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
 	<link rel="stylesheet" href="/css/style.css">
 	
 	</head>
 	<body>
 
-	<main id="body">
-		Hello world!
-	</div>
+	<main id="sites"></main>
+
+	<template id="site">
+		<div id="site-{{id}}" class="site">
+			<div class="ping">{{ping}} ms</div>
+			<div class="name">{{name}}</div>
+			<div class="url">{{url}}</div>
+		</div>
+	</template>
 	
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="/js/lib/jquery.min.js"></script>
