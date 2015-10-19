@@ -16,7 +16,7 @@ function Site(args) {
 }
 
 Site.prototype.addPing = function(args) {
-	var max = 10;
+	var max = 1440;
 	var ping = new Ping({
 		ms: args.ms,
 		timestamp: args.timestamp
@@ -26,7 +26,7 @@ Site.prototype.addPing = function(args) {
 	this.emit(ping);
 
 	if (this.pings.length > max) {
-		this.pings.splice(max * -1);
+		this.pings.splice(0, this.pings.length - max);
 	}
 };
 
